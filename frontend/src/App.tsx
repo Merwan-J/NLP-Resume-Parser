@@ -27,10 +27,13 @@ function App() {
 
         try {
             setIsUploading(true);
-            const res = await fetch("http://127.0.0.1:5000/upload", {
-                method: "POST",
-                body: formData,
-            });
+            const res = await fetch(
+                "https://nlp-resume-parser-bxyn.onrender.com/upload",
+                {
+                    method: "POST",
+                    body: formData,
+                }
+            );
 
             const data = await res.json();
             if (res.ok) {
